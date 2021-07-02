@@ -30,7 +30,8 @@ squares.forEach(function (square) {
   square.addEventListener("click", function () {
     if (square.id == clickPosition) {
       currentScore += 1;
-      score.innerHTML = currentScore; // clickPosition = null
+      score.innerHTML = currentScore;
+      clickPosition = null;
     }
   });
 }); // when click on wrong object.. game ends

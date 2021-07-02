@@ -31,7 +31,7 @@ squares.forEach((square) => {
     if (square.id == clickPosition) {
       currentScore += 1;
       score.innerHTML = currentScore;
-      // clickPosition = null
+      clickPosition = null
     }
   });
 });
