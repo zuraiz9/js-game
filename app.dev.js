@@ -5,7 +5,8 @@ var timeLeft = document.querySelector("#timeleft");
 var score = document.querySelector("#score");
 var currentScore = 0;
 var moveTimePeriod = null;
-var clickPosition; // creating the first random moving circle on grid that moves after a set time
+var clickPosition;
+var currentTime = 20; // creating the first random moving circle on grid that moves after a set time
 
 var randomPlace = function randomPlace() {
   squares.forEach(function (square) {
@@ -19,7 +20,7 @@ var randomPlace = function randomPlace() {
 
 
 var startMove = function startMove() {
-  moveTimePeriod = setInterval(randomPlace, 1000);
+  moveTimePeriod = setInterval(randomPlace, 2000);
 };
 
 startMove(); // when click on correct circle.. score gets updated
@@ -28,9 +29,21 @@ squares.forEach(function (square) {
   square.addEventListener("click", function () {
     if (square.id == clickPosition) {
       currentScore += 1;
-      score.innerHTML = currentScore;
+      score.innerHTML = currentScore; // clickPosition = null
     }
   });
 }); // when click on wrong object.. game ends
 // timer counts down to 0
-// score +=1
+
+var timer = function timer() {
+  currentTime--; // minus one from current time
+
+  timeLeft.innerHTML = currentTime;
+
+  if (currentTime == 0) {
+    clearInterval(countdownTimePeriod);
+    clearInterval(moveTimePeriod);
+  }
+};
+
+var countdownTimePeriod = setInterval(timer, 1000);
