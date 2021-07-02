@@ -8,9 +8,12 @@ var randomPlace = function randomPlace() {
   squares.forEach(function (square) {
     square.classList.remove("grn__circle");
   });
-  var randomPlace = squares[Math.floor(Math.random() * 16)];
-  console.log(randomPlace);
-}; // when click on correct circle.. score gets updated
+  var randomPlace = squares[Math.floor(Math.random() * 16)]; // console.log(randomPlace);
+
+  randomPlace.classList.add("grn__circle");
+};
+
+randomPlace(); // when click on correct circle.. score gets updated
 // when click on wrong object.. game ends
 // timer counts down to 0
 // score +=1
