@@ -6,7 +6,7 @@
 
 .grid {
   width: 90vw;
-  height: 65vh;
+  height: 60vh;
   border: solid black 2px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -18,5 +18,10 @@
 }
 
 .grn__circle {
+    background-color: green;
+    border-radius: 50%;
+}
+
+.grn__square {
     background-color: green;
 }
