@@ -5,8 +5,8 @@
 }
 
 .grid {
-  width: 620px;
-  height: 620px;
+  width: 90vw;
+  height: 65vh;
   border: solid black 2px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
