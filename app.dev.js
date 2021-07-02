@@ -3,6 +3,7 @@
 var squares = document.querySelectorAll(".square");
 var timeLeft = document.querySelector("#timeleft");
 var score = document.querySelector("#score");
+var startButton = document.querySelector("#start");
 var currentScore = 0;
 var moveTimePeriod = null;
 var clickPosition;
@@ -20,10 +21,10 @@ var randomPlace = function randomPlace() {
 
 
 var startMove = function startMove() {
-  moveTimePeriod = setInterval(randomPlace, 2000);
-};
+  moveTimePeriod = setInterval(randomPlace, 1000);
+}; // startMove()
+// when click on correct circle.. score gets updated
 
-startMove(); // when click on correct circle.. score gets updated
 
 squares.forEach(function (square) {
   square.addEventListener("click", function () {
@@ -43,7 +44,15 @@ var timer = function timer() {
   if (currentTime == 0) {
     clearInterval(countdownTimePeriod);
     clearInterval(moveTimePeriod);
+    alert("Game Over!! Score = ".concat(currentScore));
   }
-};
+}; // let countdownTimePeriod = setInterval(timer, 1000);
 
-var countdownTimePeriod = setInterval(timer, 1000);
+
+startButton.addEventListener("click", function () {
+  currentScore = 0;
+  startMove();
+  countdownTimePeriod = setInterval(timer, 1000);
+  currentTime = 20;
+  score.innerHTML = 0;
+});
