@@ -16,3 +16,7 @@
 .square {
   border: solid red 2px;
 }
+
+.grn__circle {
+    background-color: green;
+}
