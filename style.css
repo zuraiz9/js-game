@@ -3,3 +3,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.grid {
+  width: 620px;
+  height: 620px;
+  border: solid black 2px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+
+.square {
+  border: solid red 2px;
+}
