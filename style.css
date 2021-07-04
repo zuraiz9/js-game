@@ -24,15 +24,16 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 5px;
   padding: 7px;
+  background-color: rgba(0, 0, 0, 0.274);
 }
 
 .grn__circle {
-  background-color: #61c9a8;
+  background-color: #e5dc15;
   border-radius: 50%;
 }
 
 .grn__square {
-  background-color: #61c9a8;
+  background-color: #e5dc15;
 }
 
 .grn__triangle {
@@ -40,7 +41,7 @@ body {
   height: 0;
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
-  border-bottom: 80px solid #61c9a8;
+  border-bottom: 80px solid #e5dc15;
 }
 
 .text {
