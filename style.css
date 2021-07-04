@@ -26,22 +26,21 @@ body {
   padding: 7px;
 }
 
-.square {
-  border: solid red 2px;
-}
-
 .grn__circle {
-  background-color: green;
+  background-color: #61c9a8;
   border-radius: 50%;
 }
 
 .grn__square {
-  background-color: green;
+  background-color: #61c9a8;
 }
 
 .grn__triangle {
-  background-image: url(./200px-Triangle_Orange.png);
-  background-size: cover;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 80px solid #61c9a8;
 }
 
 .text {
