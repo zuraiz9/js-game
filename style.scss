@@ -5,9 +5,9 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  margin-top: 7vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 7vh;
 }
 
 .grid {
@@ -24,15 +24,15 @@ body {
 }
 
 .grn__circle {
-  background-color: green;
-  border-radius: 50%;
+    background-color: green;
+    border-radius: 50%;
 }
 
 .grn__square {
-  background-color: green;
+    background-color: green;
 }
 
 .grn__triangle {
-  background-image: url(./200px-Triangle_Orange.png);
-  background-size: cover;
+   background-image: url(./200px-Triangle_Orange.png); 
+   background-size: cover;
 }
