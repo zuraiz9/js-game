@@ -36,3 +36,33 @@ body {
   background-image: url(./200px-Triangle_Orange.png);
   background-size: cover;
 }
+
+.score__bar {
+  display: flex;
+  justify-content: space-between;
+  border: solid black 2px;
+}
+
+#start {
+  width: 60px;
+  height: 32px;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: black;
+  font-size: 16px;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+
+.difficulty {
+  width: 60px;
+  height: 32px;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: black;
+  font-size: 16px;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
