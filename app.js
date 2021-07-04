@@ -55,9 +55,9 @@ const startMove = () => {
     moveTimePeriodSq = setInterval(randomPlaceTwo, 700);
     moveTimePeriodTr = setInterval(randomPlaceThree, 700);
   } else if (diffDisplay.innerHTML === "LOL.") {
-    moveTimePeriod = setInterval(randomPlace, 400);
-    moveTimePeriodSq = setInterval(randomPlaceTwo, 400);
-    moveTimePeriodTr = setInterval(randomPlaceThree, 400);
+    moveTimePeriod = setInterval(randomPlace, 350);
+    moveTimePeriodSq = setInterval(randomPlaceTwo, 350);
+    moveTimePeriodTr = setInterval(randomPlaceThree, 350);
   }
 };
 // startMove()
