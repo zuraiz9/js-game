@@ -25,3 +25,8 @@
 .grn__square {
     background-color: green;
 }
+
+.grn__triangle {
+   background-image: url(./200px-Triangle_Orange.png); 
+   background-size: cover;
+}
