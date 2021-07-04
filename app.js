@@ -6,8 +6,10 @@ const startButton = document.querySelector("#start");
 let currentScore = 0;
 let moveTimePeriod = null;
 let moveTimePeriodSq = null;
+let moveTimePeriodTr = null;
 let clickPosition;
 let clickPositionSq;
+let clickPositionTr;
 let currentTime = 20;
 
 // creating the first random moving circle on grid that moves after a set time
@@ -32,10 +34,22 @@ const randomPlaceTwo = () => {
   clickPositionSq = randomPlaceTwo.id;
 };
 
+
+const randomPlaceThree = () => {
+  squares.forEach((square) => {
+    square.classList.remove("grn__triangle");
+  });
+  let randomPlaceThree = squares[Math.floor(Math.random() * 16)];
+  randomPlaceThree.classList.add("grn__triangle");
+
+  clickPositionTr = randomPlaceThree.id;
+};
+
 // gets auto moving..
 const startMove = () => {
   moveTimePeriod = setInterval(randomPlace, 1000);
   moveTimePeriodSq = setInterval(randomPlaceTwo, 1000);
+  moveTimePeriodTr = setInterval (randomPlaceThree, 1000);
 };
 // startMove()
 
@@ -48,6 +62,8 @@ squares.forEach((square) => {
       clickPosition = null;
     } else if (square.id == clickPositionSq) {
       gameOver(); // when click on wrong object.. game ends
+    } else if (square.id == clickPositionTr) {
+        gameOver();
     }
   });
 });
@@ -56,6 +72,7 @@ const gameOver = () => {
   clearInterval(countdownTimePeriod);
   clearInterval(moveTimePeriod);
   clearInterval(moveTimePeriodSq);
+  clearInterval(moveTimePeriodTr);
   alert(`Game Over!! Score = ${currentScore}`);
 };
 
@@ -67,6 +84,7 @@ const timer = () => {
     clearInterval(countdownTimePeriod);
     clearInterval(moveTimePeriod);
     clearInterval(moveTimePeriodSq);
+    clearInterval(moveTimePeriodTr);
     alert(`Game Over!! Score = ${currentScore}`);
   }
 };
