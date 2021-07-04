@@ -46,15 +46,15 @@ const randomPlaceThree = () => {
 
 // gets auto moving..
 const startMove = () => {
-  if (diffDisplay.innerHTML === "difficulty: Normal") {
+  if (diffDisplay.innerHTML === "Difficulty: Normal") {
     moveTimePeriod = setInterval(randomPlace, 1000);
     moveTimePeriodSq = setInterval(randomPlaceTwo, 1000);
     moveTimePeriodTr = setInterval(randomPlaceThree, 1000);
-  } else if (diffDisplay.innerHTML === "difficulty: Hard") {
+  } else if (diffDisplay.innerHTML === "Difficulty: Hard") {
     moveTimePeriod = setInterval(randomPlace, 700);
     moveTimePeriodSq = setInterval(randomPlaceTwo, 700);
     moveTimePeriodTr = setInterval(randomPlaceThree, 700);
-  } else if (diffDisplay.innerHTML === "difficulty: Insane") {
+  } else if (diffDisplay.innerHTML === "LOL.") {
     moveTimePeriod = setInterval(randomPlace, 400);
     moveTimePeriodSq = setInterval(randomPlaceTwo, 400);
     moveTimePeriodTr = setInterval(randomPlaceThree, 400);
@@ -68,12 +68,12 @@ const difficulties = document.querySelectorAll(".difficulty");
 
 difficulties.forEach((difficulty) => {
   difficulty.addEventListener("click", () => {
-    if (difficulty.innerHTML === "normal") {
-      diffDisplay.innerHTML = "difficulty: Normal";
-    } else if (difficulty.innerHTML === "hard") {
-      diffDisplay.innerHTML = "difficulty: Hard";
-    } else if (difficulty.innerHTML === "insane") {
-      diffDisplay.innerHTML = "difficulty: Insane";
+    if (difficulty.innerHTML === "NORMAL") {
+      diffDisplay.innerHTML = "Difficulty: Normal";
+    } else if (difficulty.innerHTML === "HARD") {
+      diffDisplay.innerHTML = "Difficulty: Hard";
+    } else if (difficulty.innerHTML === "INSANE") {
+      diffDisplay.innerHTML = "LOL.";
     }
   });
 });
