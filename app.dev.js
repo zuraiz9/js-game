@@ -43,12 +43,36 @@ var randomPlaceThree = function randomPlaceThree() {
 
 
 var startMove = function startMove() {
-  moveTimePeriod = setInterval(randomPlace, 1000);
-  moveTimePeriodSq = setInterval(randomPlaceTwo, 1000);
-  moveTimePeriodTr = setInterval(randomPlaceThree, 1000);
+  if (diffDisplay.innerHTML === "difficulty: Normal") {
+    moveTimePeriod = setInterval(randomPlace, 1000);
+    moveTimePeriodSq = setInterval(randomPlaceTwo, 1000);
+    moveTimePeriodTr = setInterval(randomPlaceThree, 1000);
+  } else if (diffDisplay.innerHTML === "difficulty: Hard") {
+    moveTimePeriod = setInterval(randomPlace, 700);
+    moveTimePeriodSq = setInterval(randomPlaceTwo, 700);
+    moveTimePeriodTr = setInterval(randomPlaceThree, 700);
+  } else if (diffDisplay.innerHTML === "difficulty: Insane") {
+    moveTimePeriod = setInterval(randomPlace, 400);
+    moveTimePeriodSq = setInterval(randomPlaceTwo, 400);
+    moveTimePeriodTr = setInterval(randomPlaceThree, 400);
+  }
 }; // startMove()
-// when click on correct circle.. score gets updated
+// difficulty buttons
 
+
+var diffDisplay = document.querySelector("#diff__display");
+var difficulties = document.querySelectorAll(".difficulty");
+difficulties.forEach(function (difficulty) {
+  difficulty.addEventListener("click", function () {
+    if (difficulty.innerHTML === "normal") {
+      diffDisplay.innerHTML = "difficulty: Normal";
+    } else if (difficulty.innerHTML === "hard") {
+      diffDisplay.innerHTML = "difficulty: Hard";
+    } else if (difficulty.innerHTML === "insane") {
+      diffDisplay.innerHTML = "difficulty: Insane";
+    }
+  });
+}); // when click on correct circle.. score gets updated
 
 squares.forEach(function (square) {
   square.addEventListener("click", function () {

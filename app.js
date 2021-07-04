@@ -34,7 +34,6 @@ const randomPlaceTwo = () => {
   clickPositionSq = randomPlaceTwo.id;
 };
 
-
 const randomPlaceThree = () => {
   squares.forEach((square) => {
     square.classList.remove("grn__triangle");
@@ -47,11 +46,37 @@ const randomPlaceThree = () => {
 
 // gets auto moving..
 const startMove = () => {
-  moveTimePeriod = setInterval(randomPlace, 1000);
-  moveTimePeriodSq = setInterval(randomPlaceTwo, 1000);
-  moveTimePeriodTr = setInterval (randomPlaceThree, 1000);
+  if (diffDisplay.innerHTML === "difficulty: Normal") {
+    moveTimePeriod = setInterval(randomPlace, 1000);
+    moveTimePeriodSq = setInterval(randomPlaceTwo, 1000);
+    moveTimePeriodTr = setInterval(randomPlaceThree, 1000);
+  } else if (diffDisplay.innerHTML === "difficulty: Hard") {
+    moveTimePeriod = setInterval(randomPlace, 700);
+    moveTimePeriodSq = setInterval(randomPlaceTwo, 700);
+    moveTimePeriodTr = setInterval(randomPlaceThree, 700);
+  } else if (diffDisplay.innerHTML === "difficulty: Insane") {
+    moveTimePeriod = setInterval(randomPlace, 400);
+    moveTimePeriodSq = setInterval(randomPlaceTwo, 400);
+    moveTimePeriodTr = setInterval(randomPlaceThree, 400);
+  }
 };
 // startMove()
+
+// difficulty buttons
+const diffDisplay = document.querySelector("#diff__display");
+const difficulties = document.querySelectorAll(".difficulty");
+
+difficulties.forEach((difficulty) => {
+  difficulty.addEventListener("click", () => {
+    if (difficulty.innerHTML === "normal") {
+      diffDisplay.innerHTML = "difficulty: Normal";
+    } else if (difficulty.innerHTML === "hard") {
+      diffDisplay.innerHTML = "difficulty: Hard";
+    } else if (difficulty.innerHTML === "insane") {
+      diffDisplay.innerHTML = "difficulty: Insane";
+    }
+  });
+});
 
 // when click on correct circle.. score gets updated
 squares.forEach((square) => {
@@ -63,7 +88,7 @@ squares.forEach((square) => {
     } else if (square.id == clickPositionSq) {
       gameOver(); // when click on wrong object.. game ends
     } else if (square.id == clickPositionTr) {
-        gameOver();
+      gameOver();
     }
   });
 });
