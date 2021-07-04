@@ -12,10 +12,12 @@ body {
   margin-top: 3vh;
   min-height: 100vh;
   background: linear-gradient(
-    rgba(97, 201, 168, 1) 35%,
-    rgba(105, 55, 255, 1)
+    rgba(105, 55, 255, 1) 35%,
+    rgba(252, 172, 138, 1)
   );
   text-align: center;
+  color: #e5dc15;
+  font-family: "Krona One", sans-serif;
 }
 
 .grid {
@@ -46,10 +48,19 @@ body {
   background-size: cover;
 }
 
+.text {
+  border: solid black 2px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
 .score__bar {
   display: flex;
   justify-content: space-between;
-  margin-top: 5vh;
+  margin-top: 4vh;
   margin-bottom: 15px;
 }
 
@@ -68,7 +79,7 @@ body {
 
 .difficulty {
   @include btn-1;
-  width: 70px;
+  width: 65px;
   font-size: 16px;
   font-weight: bold;
 }
@@ -77,4 +88,8 @@ body {
 }
 .difficulty:active {
   @include btn-active;
+}
+
+#diff__display {
+    margin-top: 30px;
 }
