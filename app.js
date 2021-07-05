@@ -47,13 +47,13 @@ const randomPlaceThree = () => {
 // gets auto moving..
 const startMove = () => {
   if (diffDisplay.innerHTML === "Difficulty: Normal") {
-    moveTimePeriod = setInterval(randomPlace, 1000);
-    moveTimePeriodSq = setInterval(randomPlaceTwo, 1000);
-    moveTimePeriodTr = setInterval(randomPlaceThree, 1000);
+    moveTimePeriod = setInterval(randomPlace, 750);
+    moveTimePeriodSq = setInterval(randomPlaceTwo, 750);
+    moveTimePeriodTr = setInterval(randomPlaceThree, 750);
   } else if (diffDisplay.innerHTML === "Difficulty: Hard") {
-    moveTimePeriod = setInterval(randomPlace, 700);
-    moveTimePeriodSq = setInterval(randomPlaceTwo, 700);
-    moveTimePeriodTr = setInterval(randomPlaceThree, 700);
+    moveTimePeriod = setInterval(randomPlace, 550);
+    moveTimePeriodSq = setInterval(randomPlaceTwo, 550);
+    moveTimePeriodTr = setInterval(randomPlaceThree, 550);
   } else if (diffDisplay.innerHTML === "LOL.") {
     moveTimePeriod = setInterval(randomPlace, 350);
     moveTimePeriodSq = setInterval(randomPlaceTwo, 350);
